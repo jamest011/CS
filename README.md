@@ -1,3 +1,3 @@
 # cse110
 
-Programs from CSE110 at Brigham Young University - Idaho (BYU-I)
+Programs for computer science and applied technology at Brigham Young University - Idaho (BYU-I)
