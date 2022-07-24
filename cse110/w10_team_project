@@ -1,0 +1,50 @@
+bank_account = []
+balances = []
+bank = 0
+balance = 0
+
+while bank != "quit":
+    print()
+    bank = input("What is the name of this bank account? ")
+    if bank.lower() != "quit":
+        balance = float(input("What is the balance? "))
+
+        bank_account.append(bank)
+        balances.append(balance)
+
+total = 0
+
+for i in (n+1 for n in range(len(bank_account))):
+    print(f"{i}. {bank_account[i-1]} - ${balances[i-1]}")
+
+print()
+
+total += balances[i]
+print(f"Total: ${total:.2f}")
+
+# average = total / len(balances)
+# print(f"Average: ${average:.2f}")
+
+# update = "hey"
+# while update.lower() != "no":
+#     update = input("Do you want to update your account? ")
+#     if update.lower() != "no":
+#         index = int(input("What account do you want to update? "))
+#         new_balance = float(input("What is the new balance? "))
+
+#     balances[index] = new_balance
+
+# highest_balance = -1
+# highest_bank = None
+
+# for i in range(len(bank_account)):
+#     name = bank_account[i]
+#     money = balances[i]
+#     if money > highest_balance:
+#         highest_balance = money
+#         highest_bank = name
+
+# print(f"Highest balance: {highest_bank} - ${highest_balance}")
+
+# for i in range(len(bank_account)):
+#     print(f"{i}. {bank_account[i]} - ${balances[i]}")
