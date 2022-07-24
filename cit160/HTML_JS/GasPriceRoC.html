@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Gas Prices</title>
+<script>
+// Input: Receive kilometers from user
+function computeRateOfChange() {
+    // Get previous price and current price from user
+    let prev = parseFloat(document.getElementById('prevPrice').value);
+    let cur = parseFloat(document.getElementById('currPrice').value);
+
+    // Calculate Rate of Change.
+    let roc = parseFloat ((cur - prev) / prev);
+
+    // Round the miles to two digits after the decimal.
+    let digits = 4;
+    let multiplier = Math.pow(10, digits);
+    roc = Math.round(roc * multiplier) / multiplier;
+
+    // Display the miles to user.
+    document.getElementById('rate').innerHTML = roc;
+}
+</script>
+</head>
+<body>
+    <h1>Rate of Change</h1>
+    Previous Price <input type="text" id="prevPrice"><br>
+    Current Price <input type="text" id="currPrice"><br>
+    <button type="button" onclick="computeRateOfChange()">Rate of Change</button><br>
+    Rate of Change <div id="rate"></div>
+</body>
+</html>

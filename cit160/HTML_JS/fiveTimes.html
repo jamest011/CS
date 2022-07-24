@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Multiples of 5</title>
+
+<script>
+/* Input: No input needed from a user
+ * Processing: count from 1-12 and calculate 5 * those numbers.
+ * Output: the five times table from 1 to 12 in a specific format.
+ */
+function multiples() {
+    var output = '';
+    var i = 1;
+    while (i <= 12) {
+        output += "5 x " + i + ' =' + ' ' + (5 * i) + '<br>';
+        i += 1;
+    }
+    document.getElementById('outputDiv').innerHTML = output;
+}
+</script>
+</head>
+
+<body>                      
+    <button type="button" onclick="multiples()">Show me the multiples of 5!</button>
+    <div id="outputDiv"></div>
+</body>         
+</html>

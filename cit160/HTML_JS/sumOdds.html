@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Calculate sum of the odd numbers! </title>
+
+<script>
+/* Input: Asks the user for an integer.
+ * Processing: Calculate the sums of all odd integers between 1 and user input.
+ * Output: The sum of the integers between 1 and the user input. 
+ */
+function oddSums() {
+    let input = parseInt(document.getElementById('inputBox').value);
+    let sum = 0;
+    // Test all numbers between 1 and the user's input, and add all of the the odd ones to result.
+    
+    for (let oddNum = 1; oddNum <= input;  oddNum++) {
+
+        if (oddNum % 2 != 0) {
+            sum = oddNum + sum;
+        }
+    }
+
+    // Determine the output and show it to the user.
+    document.getElementById('outputDiv').innerHTML = sum;
+ }
+</script>
+</head>
+
+<body>
+Please enter an integer: <input type="text" id="inputBox" size ="5"><br>
+<button type="button" onclick="oddSums()">Show me the sum!</button>
+<div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>What shoes should you wear today?</title>
+
+<script>
+/* Input: The weather for the day
+ * Processing: Determine which shoes to wear based on inputs
+ * Output: A message saying which shoes would be best for the day.
+ */
+function weather() {
+    let climate = document.getElementById('inputBox').value;
+    let shoes;
+    if (climate == 'hot') {
+        shoes = 'sandals';
+    }
+    else if (climate == 'rain') {
+        shoes = 'galoshes';
+    }
+    else if (climate == 'snow') {
+        shoes = 'boots';
+    }
+    else {
+        shoes = 'shoes';
+        }
+    let output = 'You should consider wearing ' + shoes;
+    document.getElementById('outputDiv').innerHTML = output;
+    }
+</script>
+</head>
+
+<body>                      
+    Please enter the weather to determine what shoes are best to wear:  <input type="text" id="inputBox"><br>
+    <button type="button" onclick="weather()">SHOW ME THE SHOES!</button>
+    <div id="outputDiv"></div>              
+</body>         
+</html>

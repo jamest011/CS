@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Loan Calculator</title>
+<script>
+/* Input: Numbers from the user
+ * Processing: Receive input from user and pass it through the functions
+ * Output: Payment and Payoff amount
+ */
+ 
+// Calls the computePayment function and outputs the payment amount.
+function doPayment() {
+	let principal = parseFloat(document.getElementById("principal").value);
+	let annualRate = parseFloat(document.getElementById("annualRate").value);
+	let years = parseFloat(document.getElementById("years").value);
+	let paymentsPerYear = parseFloat(document.getElementById("ppy").value);
+	let numPayments = parseFloat(document.getElementById("numPayments").value);
+	let payment = computePayment(principal, annualRate, years, paymentsPerYear);
+				
+	document.getElementById("paymenetDiv").innerHTML = "$ " + payment;
+}
+// Calls the computeBalance function and outputs balance left
+function doBalance() {
+	let principal = parseFloat(document.getElementById("principal").value);
+	let annualRate = parseFloat(document.getElementById("annualRate").value);
+	let years = parseFloat(document.getElementById("years").value);
+	let paymentsPerYear = parseFloat(document.getElementById("ppy").value);
+	let numPayments = parseFloat(document.getElementById("numPayments").value);
+	let balance = computeBalance(principal, annualRate, years, paymentsPerYear, numPayments);
+				
+	document.getElementById("balanceDiv").innerHTML = "$ " + balance;
+}
+// Calculate the total payment cost based on user inputs
+function computePayment(principal, annualRate, years, paymentsPerYear) {
+	let a = principal;
+	let r = annualRate/paymentsPerYear;
+	let n = paymentsPerYear * years;
+	let payment = ((a * r)/(1-((1 + r)**-n)));
+	return payment.toFixed(2);
+}
+// Calculate the blanace that is left after the user inputs the number of payments
+function computeBalance(principal, annualRate, years, paymentsPerYear, numPayments) {
+	let a = principal;
+	let r = annualRate/paymentsPerYear;
+	let p = computePayment(principal, annualRate, years, paymentsPerYear);
+	let n = numPayments;
+	let balance = ((a * ((1 + r) ** n)) - ((p*(((1 + r)**n) - 1)) / r));
+	return balance.toFixed(2);
+}
+</script>
+</head>
+<body>                      
+    Amount Borrowed (principal)  <input type="text" id="principal" ><br>
+    Annual interest rate (example: .065) <input type="text" id="annualRate" size="5"><br>
+    Number of Years  <input type="text" id="years" size="5"><br>
+    Payments Per Year  <input type="text" id="ppy" size="5"><br>
+    <button type="button" onclick="doPayment()">Compute Payment</button>
+    <div id="paymenetDiv"></div>
+    Number of Payments Paid to Date <input type="text" id="numPayments"><br>
+    <button type="button" onclick="doBalance()">Compute Payoff Amount</button>
+    <div id="balanceDiv"></div>              
+</body>         
+</html>

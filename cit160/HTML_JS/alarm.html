@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> Sleep in or No?</title>
+
+<script>
+/* Input: Get input from computer clock and calendar
+ * Processing: Determine if the user can sleep in or not based on day of week.
+ * Output: Sleep in or Get up
+ */
+function alarm() {
+    let now = new Date();
+    let month = now.getMonth();
+    let dayOfMonth = now.getDate();
+    let dayOfWeek = now.getDay();
+    const dayCount = 60
+    const targetEvent = 'Christmas'
+
+    const daysUntil = `There are ` + dayCount + ` days until ` + targetEvent + `!`;
+
+    if (dayOfWeek == 0 || dayOfWeek == 6) {
+        notification = daysUntil;
+    }
+    if (month == 0 && dayOfMonth == 1) {
+        notification = daysUntil;
+    }
+    if (month == 6 && dayOfMonth == 4) {
+        notification = daysUntil;
+    }
+    if (dayOfMonth == 25 && month == 11) {
+        notification = daysUntil;
+    }
+    else {
+        notification = daysUntil;
+        }
+
+    document.getElementById('outputDiv').innerHTML = notification;
+    }
+</script>
+</head>
+
+<body>                      
+    <button type="button" onclick="alarm()">Please tell me I can sleep in!</button>
+    <div id="outputDiv"></div>              
+</body>         
+</html>

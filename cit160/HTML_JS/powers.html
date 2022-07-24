@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Powers of 2!</title>
+
+<script>
+/* Input: No input needed from a user
+ * Processing: count from 1-12 and calculate 5 * those numbers.
+ * Output: display all powers of 2 from 2to the power of 0 up to 2 to the power of 31
+ */
+function power() {
+    var output = '';
+    var i = 0;
+    while (i <= 31) {
+        output += Math.pow(2, i) + ', ';
+        i += 1;
+    }
+    document.getElementById('outputDiv').innerHTML = output;
+}
+</script>
+</head>
+
+<body>                      
+    <button type="button" onclick="power()">Powers of 2!</button>
+    <div id="outputDiv"></div>
+</body>         
+</html>

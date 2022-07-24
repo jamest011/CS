@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> 10% Discount Tuesday's and Wednesday's!</title>
+
+<script>
+/* Input: Customers subtotal.
+ * Processing: Determine if the customer qualifies for a discount based on day of week.
+ * Output: Total after tax and discount if applicable.
+ */
+function discount() {
+    let sub = parseFloat(document.getElementById('subTotal').value);
+    let dayOfWeek = new Date().getDay();
+    let total;
+    let disc;
+    if (sub > 50 && dayOfWeek == 2 || dayOfWeek == 3) {
+        disc = parseFloat (sub - (sub * .10));
+        total = parseFloat(disc + (disc * .06));
+    }
+    else {
+        total = sub * 0.06 + sub;
+        }
+
+    // Round the discount to two digits after the decimal.
+    let digits = 2;
+    let multiplier = Math.pow(10, digits);
+    total = Math.round(total * multiplier) / multiplier;
+
+    let output = '$' + total;
+    document.getElementById('outputDiv').innerHTML = output;
+    }
+</script>
+</head>
+
+<body>                      
+    Please enter the subtotal:  <input type="text" id="subTotal"><br>
+    <button type="button" onclick="discount()">SHOW ME THE DISCOUNT</button>
+    <div id="outputDiv"></div>              
+</body>         
+</html>

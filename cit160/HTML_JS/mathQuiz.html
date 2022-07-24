@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Test Your Math Skills!</title>
+
+<script>
+/* Input: Numbers and arithmetic operator from user to test math skills
+ * Processing: Check if user is correct based on inputs
+ * Output: A message saying "Correct! Good job" or "Incorrect. Try again!""
+ */
+function mathTest() {
+    let a = parseFloat(document.getElementById('num1').value);
+    let b = document.getElementById('operator').value;
+    let c = parseFloat(document.getElementById('num2').value);
+    let d = parseFloat(document.getElementById('num3').value);
+    
+    let output = 'redo';
+    if (b == '*') {
+        if (a*c == d) 
+            output = 'Correct! Good job!';
+        else
+            output = 'Incorrect. Try again!';
+    }
+    else if (b == '+') {
+        if (a+c == d)
+            output = 'Correct! Good job!';
+        else 
+            output = 'Incorrect. Try again!';
+    }
+    else if (b == '/') {
+        if (a/c == d)
+            output = 'Correct! Good job!';
+        else 
+            output = 'Incorrect. Try again!';
+    }
+    else if (b == '-') {
+        if (a-c == d)
+            output = 'Correct! Good job!';
+        else 
+            output = 'Incorrect. Try again!';
+    }
+    else {
+        output = 'Please try again';
+    }
+    document.getElementById('outputDiv').innerHTML = output;
+}
+</script>
+</head>
+
+<body>                      
+    <h2>Test Your Math Skills!</h2>
+    <input type="text" id="num1"> <input type="text" id="operator" size="1"> <input type="text" id="num2"> = <input type="text" id="num3"><br>
+    <button type="button" onclick="mathTest()">Check your math!</button>
+    <div id="outputDiv"></div>              
+</body>         
+</html>

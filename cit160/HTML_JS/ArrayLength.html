@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Get Last</title>
+<script>
+function getLast() {
+    let list1 = [ -3, 0, 7.1, 5 ];
+    let list2 = [ 17, 8, 9, 5, 20 ];
+    let list3 = [ 5, -2.1, 6.3, 9, 5, 13 ];
+
+    let output = list1[list1.length - 1];
+    let output2 = list2[list2.length - 1];
+    let output3 = list3[list3.length - 1];
+
+    document.getElementById('output').innerHTML = output;
+    document.getElementById('output2').innerHTML = output2;
+    document.getElementById('output3').innerHTML = output3;
+}
+</script>
+</head>
+<body>                      
+    <button type="button" onclick="getLast()">Show Results!</button>
+    <div id="output"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+</body>         
+</html>

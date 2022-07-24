@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Test Function</title>
+<script>
+function makeFullName() {
+    let given = document.getElementById('givenName').value;
+    let family = document.getElementById('familyName').value;
+
+    let output = family + ', ' + given;
+
+// Display the output string for the user to see.
+document.getElementById('output').innerHTML = output;
+
+}
+
+</script>
+</head>
+<body>                      
+Please enter your given name: <input type="text" id="givenName">
+Please enter your family name: <input type="text" id="familyName">
+<button type="button" onclick="makeFullName()">Show Results!</button>
+<div id="output"></div>      
+</body>         
+</html>

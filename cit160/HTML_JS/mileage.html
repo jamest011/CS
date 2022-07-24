@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Kilometers to Miles</title>
+<script>
+// Input: Receive travel information from user
+function distance() {
+     // Get the odometer and gallons from the user.
+    let s = parseFloat(document.getElementById('start').value);
+    let e = parseFloat(document.getElementById('end').value);
+    let p = parseFloat(document.getElementById('petrol').value);
+
+    // Computes the gas mileage
+    let m = (e-s)/p;
+
+    // Round the miles to two digits after the decimal.
+    let digits = 2;
+    let multiplier = Math.pow(10, digits);
+    m = Math.round(m * multiplier) / multiplier;
+
+    //Display the mileage to user.
+    document.getElementById('outputDiv').innerHTML = m;
+}
+</script>
+</head>
+<body>
+    Starting Odometer Reading:  <input type="text" id="start" size="5"><br>
+    Final Odometer Reading:  <input type="text" id="end" size="5"><br> 
+    Gallons Used:  <input type="text" id="petrol" size="5"><br> 
+    <button type="button" onclick="distance()">SHOW ME THE MILEAGE</button> 
+    <div id="outputDiv"></div>  
+</body>
+</html>

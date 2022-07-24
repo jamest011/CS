@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Get Last</title>
+<script>
+function averageBig(list)   {
+let list1 = [ 70, 1010, 950, 2014, 6 ];
+let list2 = [ -72.3, 3000, 873, 2312, 68, 7501.3 ];
+let list3 = [ 70, 950, 671, 6 ];
+let total = 0;
+let avg = 0;
+let count = 0;
+
+for (let i = 0; i < list1.length; i++) {
+    if (list1[i] > 1000) {
+        count+=1;
+        count++;
+    }
+}
+if (count > 0)
+    avg = total / count;
+return avg;
+
+document.getElementById('output').innerHTML = avg;
+
+}
+</script>
+</head>
+<body>                      
+    <button type="button" onclick="averageBig()">Show Results!</button>
+    <div id="output"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+</body>         
+</html>
